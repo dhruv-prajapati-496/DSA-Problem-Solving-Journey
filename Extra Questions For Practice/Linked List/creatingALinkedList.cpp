@@ -18,6 +18,7 @@ class List{
     List(){
         head = tail = NULL;
     }
+
     void push_front(int val){           //O(1)
         Node* newNode = new Node(val);
         if(head == NULL){
@@ -29,6 +30,7 @@ class List{
             head = newNode;
         }
     }
+
     void push_back(int val){            //O(1)
         Node* newNode = new Node(val);
         if(head == NULL){
@@ -92,6 +94,9 @@ class List{
         Node* newNode = new Node(val);
         newNode->next = temp -> next;
         temp -> next = newNode;
+        if (newNode->next == NULL) {
+            tail = newNode;
+        }
     }
 
     void printLL(){                     //O(n)
@@ -116,6 +121,7 @@ class List{
 
     }
 };
+
 int main(){
     //Creating A linked list named ll.
     List ll;
@@ -123,23 +129,30 @@ int main(){
     ll.push_back(1);
     ll.push_back(2);
     ll.push_back(3);
+
     cout<<"Printing The Created Linked List: ";
     ll.printLL();
+
     cout<<"Push Back: 4\n";
     ll.push_back(4);
     ll.printLL();
+
     cout<<"Pop Front: \n";
     ll.pop_front();
     ll.printLL();
+
     cout<<"Push Front: 7\n";
     ll.push_front(7);
     ll.printLL();
+
     cout<<"Pop Back: \n";
     ll.pop_back();
     ll.printLL();
+
     cout<<"Insert 5 at position 2\n";
     ll.insert(5,2);
     ll.printLL();
+
     cout<<"Searching index of 5 \n";
     cout<<"Index of 5 is: "<<ll.search(5);
 
