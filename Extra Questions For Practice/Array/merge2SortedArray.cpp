@@ -26,7 +26,7 @@ int main(){
             ans.push_back(a[i]);
             i++; 
         }
-        if(b[j]<=a[i]){
+        else{
             ans.push_back(b[j]);
             j++;
         }
