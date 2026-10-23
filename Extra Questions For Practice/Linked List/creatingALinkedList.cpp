@@ -12,7 +12,7 @@ class Node{
     }
 };
 class List{
-    Node* head;
+    Node* head;     
     Node* tail;
     public:
     List(){
