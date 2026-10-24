@@ -5,7 +5,7 @@ using namespace std;
 class Node{
     public:
     int data;
-    Node* next;
+    Node* next; 
     Node(int val){
         data = val;
         next = NULL;
@@ -120,6 +120,17 @@ class List{
         return -1;
 
     }
+    ~List(){
+    Node* temp = head;
+
+    while(temp != nullptr){
+        Node* nextNode = temp->next;
+        delete temp;
+        temp = nextNode;
+    }
+
+    head = tail = nullptr;
+}
 };
 
 int main(){
