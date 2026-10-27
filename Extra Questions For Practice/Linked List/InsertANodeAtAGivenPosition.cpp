@@ -64,6 +64,10 @@ class List{
             }
             temp = temp ->next;
         }
+        if(temp == nullptr){
+            cout<<"Invalid Position\n";
+            return;
+        }
         Node* newNode = new Node(val);
         newNode -> next = temp -> next;
         temp -> next = newNode;
