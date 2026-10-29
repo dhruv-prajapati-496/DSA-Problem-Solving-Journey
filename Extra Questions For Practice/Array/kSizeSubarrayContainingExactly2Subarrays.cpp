@@ -7,7 +7,7 @@ Odd numbers may be positive or negative.
 #include<iostream>
 #include<vector>
 using namespace std;
-int Solution(vector<int> arr, int k){
+int Solution(const vector<int> arr, int k){
     int oddCount = 0, ans = 0;
     for(int i = 0; i<k; i++){
         if(arr[i]%2 != 0){
@@ -41,6 +41,10 @@ int main(){
     }
     cout<<"Enter Window Size: ";
     int k; cin>>k;
+    if(k<=0 && k>n){
+        cout<<"Invalid Input";
+        return 0;
+    }
     cout<<"Result: "<<Solution(arr,k);
     return 0; 
 }

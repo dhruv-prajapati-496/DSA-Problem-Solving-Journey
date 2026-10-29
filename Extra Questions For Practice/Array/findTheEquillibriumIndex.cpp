@@ -9,7 +9,7 @@ If multiple equilibrium indices exist, return the rightmost one. If none exist, 
 #include<iostream>
 #include<vector>
 using namespace std;
-int findTheEquillibriumIndex(vector<int> arr){
+int findTheEquillibriumIndex(const vector<int> arr){
     int idx = -1; long long maxSum = 0;
     for(int i: arr){
         maxSum+=i;
