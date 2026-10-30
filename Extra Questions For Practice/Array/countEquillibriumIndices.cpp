@@ -9,7 +9,7 @@ Unlike Day 16, which asked for the rightmost equilibrium index, today's problem 
 #include<iostream>
 #include<vector>
 using namespace std;
-int Solution(const vector<int> arr, long long Sum){
+int Solution(const vector<int>& arr, long long Sum){
     int count = 0;
     long long rightSum = 0, leftSum = 0;
     for(int i = 0; i<arr.size(); i++){

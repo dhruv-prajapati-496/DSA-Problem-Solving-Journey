@@ -7,7 +7,7 @@ If no such window exists, return -1.
 #include<iostream>
 #include<vector>
 using namespace std;
-long long Solution(const vector<int> arr, int k){
+long long Solution(const vector<int>& arr, int k){
     int negCount = 0;
     long long maxSum = -1, currSum = 0;
 
