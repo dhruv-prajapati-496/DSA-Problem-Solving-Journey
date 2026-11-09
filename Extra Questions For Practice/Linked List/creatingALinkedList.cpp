@@ -99,6 +99,40 @@ class List{
         }
     }
 
+    void remove(int pos){
+        if(head == NULL){
+            cout<<"List is Empty\n";
+            return;
+        }
+        if(pos<0){
+            cout<<"Invalid Position\n";
+            return;
+        }
+        if(pos==0){
+            pop_front();
+            return;
+        }
+        Node* temp = head;
+        for(int i = 0; i<pos-1; i++){
+            if(temp == NULL || temp ->next == NULL){
+                cout<<"Invalid Position\n";
+                return;
+            }
+            temp = temp->next;
+        }
+        if(temp->next== NULL){
+            cout<<"Invalid Position\n";
+            return;
+        }
+        Node* toDelete = temp->next;
+        temp->next = toDelete->next;
+        if(toDelete == tail){
+            tail = temp;
+        }
+        toDelete->next = NULL;
+        delete toDelete;
+    }
+
     void printLL(){                     //O(n)
         Node* temp = head;
         while(temp!=NULL){
