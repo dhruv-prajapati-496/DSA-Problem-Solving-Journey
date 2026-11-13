@@ -133,6 +133,22 @@ class List{
         delete toDelete;
     }
 
+    void reverse(){
+
+        if(head == NULL || head->next == NULL) return;
+
+        Node* prev = NULL;
+        Node* curr = head;
+        tail = head;
+
+        while(curr!=NULL){
+            Node* nextNode = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = nextNode;
+        } head = prev;
+    }
+
     void printLL(){                     //O(n)
         Node* temp = head;
         while(temp!=NULL){
