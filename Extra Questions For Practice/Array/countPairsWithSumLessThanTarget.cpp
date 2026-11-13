@@ -26,7 +26,7 @@ int main(){
     while(i<j){
         if(arr[i] + arr[j] < k){
             count+= (j-i);
-            i++;
+            i++; 
         }
         else{
             j--;
