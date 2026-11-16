@@ -20,7 +20,7 @@ int closestPairSumToATarget(const vector<int> &arr, int tar){
     int i = 0,j=arr.size()-1; long long ans = INT_MAX;
     long long sum = 0;
     while(i<j){
-        sum = (arr[i] + arr[j]);
+        sum = ((long long)arr[i] + arr[j]);
         long long diff = llabs(sum - tar);
         if(arr[i]+arr[j] == tar){
             return 0;
